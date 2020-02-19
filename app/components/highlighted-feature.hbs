@@ -1,0 +1,9 @@
+<div
+  class={{concat
+    "highlighted-feature "
+    @feature.args.name
+    (if @feature.isActive " highlighted-feature--active")
+  }}
+>
+  Highlighted feature: {{@feature.args.name}} {{if @feature.isActive "active"}}
+</div>

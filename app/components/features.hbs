@@ -1,0 +1,24 @@
+<div
+  class="features"
+  {{did-insert this.handleInsertElement}}
+>
+  {{yield
+    (hash
+      Feature=(component
+        "feature"
+        activeFeature=this.activeFeature
+        onActivate=this.activateFeature
+        onInsert=this.registerFeature
+      )
+    )
+  }}
+
+  <div class="features__highlighted">
+    {{#each this.features as |feature|}}
+      <HighlightedFeature
+        @feature={{feature}}
+        @activeFeature={{this.activeFeature}}
+      />
+    {{/each}}
+  </div>
+</div>

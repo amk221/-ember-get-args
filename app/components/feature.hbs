@@ -1,0 +1,11 @@
+<div
+  class={{concat
+    "feature "
+    @name
+    (if this.isActive " feature--active")
+  }}
+  {{on "mouseenter" this.handleMouseEnter}}
+  {{did-insert this.handleInsert}}
+>
+  {{@name}} {{if this.isActive "active"}}
+</div>
